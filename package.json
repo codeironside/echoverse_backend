@@ -1,0 +1,29 @@
+{
+  "name": "echoverse_backend",
+  "version": "1.0.1",
+  "description": "backend for echoverse cms",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "poems",
+    "spoken-words",
+    "novels",
+    "short-stories"
+  ],
+  "author": "oluwatobi ayoola jolaosho",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "compression": "^1.8.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "express-async-handler": "^1.2.0",
+    "express-validator": "^7.2.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.9",
+    "pg": "^8.14.1"
+  }
+}
