@@ -7,7 +7,8 @@ import dotenv from dotenv;
 
 
 
-
+//logger
+const logger = new DailyLogger();
 
 
 
