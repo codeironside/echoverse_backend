@@ -12,7 +12,7 @@
     "knex": "knex",
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "npx nodemon",
     "lint": "eslint . --ext .ts",
     "test": "jest"
   },
@@ -36,6 +36,7 @@
     "winston-daily-rotate-file": "^5.0.0"
   },
   "dependencies": {
+    "@prisma/client": "^6.8.2",
     "@types/express-session": "^1.18.1",
     "chalk": "^5.4.1",
     "cors": "^2.8.5",
@@ -44,6 +45,7 @@
     "helmet": "^8.1.0",
     "knex": "^3.1.0",
     "module-alias": "^2.2.3",
+    "prisma": "^6.8.2",
     "rate-limiter-flexible": "^7.1.0",
     "redis": "^5.0.1",
     "socket.io": "^4.8.1"

@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config({path: "../../../../env"})
+
 interface Config {
   PORT: number;
   EMAIL_HOST: string;

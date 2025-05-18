@@ -1,16 +1,16 @@
 import "module-alias/register"
 
-import express from "express";
+import express,{Express} from "express";
 import { createServer } from "http";
 import { Server } from "socket.io";
-import { loadEnv } from "@config/env";
-import { initRedis } from "@config/redis";
-import apiRouter from "@routes/api";
-import errorHandler from "@middleware/errorHandler";
+import { config } from "@/CORE/utils/config";
+import { initRedis } from "@/CORE/services/redis";
+import { AppRouter } from "./App_router";
+import{ errorHandler }from "@/CORE/middleware/errorHandler";
 
-loadEnv();
 
-const app = express();
+
+const app:Express = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
@@ -18,17 +18,16 @@ const io = new Server(httpServer, {
   },
 });
 
-// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Routes
-app.use("/api", apiRouter);
+  
+app.use("/api", AppRouter);
 
-// Error handling
+
 app.use(errorHandler);
 
-// Socket.IO
+
 io.on("connection", (socket) => {
   console.log("Client connected:", socket.id);
 
@@ -37,14 +36,13 @@ io.on("connection", (socket) => {
   });
 });
 
-// Initialize services
 const initializeServices = async () => {
   await initRedis();
-  // Add other service initializations here
+  
 };
 
 const startServer = () => {
-  const PORT = process.env.PORT || 3000;
+  const PORT = config.PORT || 3000;
   httpServer.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
