@@ -1,15 +1,17 @@
 import { createClient } from "redis";
-import { loadEnv } from "./env";
+import { config } from "@/CORE/utils/config";
 
 type RedisClient = ReturnType<typeof createClient>;
 
-const env = loadEnv();
+
 
 let redisClient: RedisClient;
+const testurl = `redis://${config.REDIS_HOST}:${config.REDIS_PORT}`
+console.log(` Connecting to Redis at ${testurl}`)
 
 export const initRedis = async (): Promise<RedisClient> => {
   redisClient = createClient({
-    url: `redis://${env.REDIS_HOST}:${env.REDIS_PORT}`,
+    url: `redis://${config.REDIS_HOST}:${config.REDIS_PORT}`,
   });
 
   redisClient.on("error", (err) => console.error("Redis Client Error:", err));

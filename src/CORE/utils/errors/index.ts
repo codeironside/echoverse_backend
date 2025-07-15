@@ -1,5 +1,5 @@
 export class BadRequestError extends Error {
-  public statusCode: number;
+  public statusCode:number;
   public details?: any;
 
   constructor(message: string, statusCode = 400, details?: any) {
