@@ -1,21 +1,40 @@
 
 import { Server } from "socket.io";
+import { registerSocketHandlers } from "./handlers";
+import logger from "@/CORE/logger";
 
-let ioInstance: Server;
+let io: Server | null = null;
+let connectedClients = new Set<string>();
 
-export const initSocket = (io: Server) => {
-  ioInstance = io;
+export const initSocket = (serverIO: Server) => {
+  io = serverIO;
 
-  ioInstance.on("connection", (socket) => {
-    socket.on("chatMessage", (message) => {
-      io.emit("chatMessage", message);
+  io.on("connection", (socket) => {
+    console.log(`🔌 New client connected: ${socket.id}`);
+    connectedClients.add(socket.id);
+
+    registerSocketHandlers(socket);
+
+    socket.on("disconnect", () => {
+      console.log(`❌ Client disconnected: ${socket.id}`);
+      connectedClients.delete(socket.id);
     });
   });
+
+  logger.info("✅ Socket.IO initialized");
 };
 
 export const getIO = (): Server => {
-  if (!ioInstance) {
-    throw new Error("Socket.IO not initialized");
+  if (!io) {
+    logger.error("SocketIO not initialized");
+    throw new Error("SocketIO not initialized");
   }
-  return ioInstance;
+  return io;
+};
+
+export const checkSocketStatus = () => {
+  return {
+    status: io ? "UP" : "DOWN",
+    connectedClients: connectedClients.size,
+  };
 };

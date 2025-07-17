@@ -11,14 +11,14 @@ import { initRedis } from "@/CORE/services/redis";
 import { PrismaClient } from "@prisma/client";
 import { errorHandler } from "@/CORE/middleware/errorHandler";
 import { API_SUFFIX } from "@/CORE/utils/types/global";
+import Logger from "@/CORE/logger"
 
+import { Server as SocketIOServer } from "socket.io";
+
+import { initSocket } from "@/CORE/services/socketio";
 const app: Express = express();
 const httpServer = createServer(app);
-const io = new Server(httpServer, {
-  cors: {
-    origin: "*",
-  },
-});
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -27,23 +27,29 @@ app.use(API_SUFFIX, AppRouter);
 
 app.use(errorHandler);
 
-// io.on("connection", (socket) => {
-//   console.log("Client connected:", socket.id);
 
-//   socket.on("disconnect", () => {
-//     console.log("Client disconnected:", socket.id);
-//   });
-// });
+const io = new SocketIOServer(httpServer, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"],
+  },
+  
+});
+
+initSocket(io);
+
+
+
 
 const initializeServices = async () => {
-  // await initRedis();
+  await initRedis();
 };
 export const prismaClient = new PrismaClient({log:['query']});
 
-const startServer = () => {
+const startServer = async () => {
   const PORT = config.PORT || 3000;
   httpServer.listen(PORT, () => {
-    console.log([chalk.green(day)], `Server running on port ${PORT}`);
+    Logger.info(`server running on port ${PORT}`);
   });
 };
 
@@ -53,3 +59,7 @@ initializeServices()
     console.error("Failed to initialize services:", error);
     process.exit(1);
   });
+
+
+
+export default app

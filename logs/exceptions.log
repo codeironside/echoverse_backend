@@ -1,0 +1,116 @@
+2025-07-16T10:17:43.946Z [error]: TSError: ⨯ Unable to compile TypeScript:
+[96msrc/CORE/services/redis/index.ts[0m:[93m19[0m:[93m42[0m - [91merror[0m[90m TS2552: [0mCannot find name 'url'. Did you mean 'URL'?
+
+[7m19[0m   console.log(` Connecting to Redis at ${url}`);
+[7m  [0m [91m                                         ~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m23869[0m:[93m13[0m
+    [7m23869[0m declare var URL: {
+    [7m     [0m [96m            ~~~[0m
+    'URL' is declared here.
+
+    at createTSError (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1711:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1328:32)
+    at Function._load (node:internal/modules/cjs/loader:1138:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+2025-07-16T10:18:43.641Z [error]: Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1905:16)
+    at listenInCluster (node:net:1962:12)
+    at Server.listen (node:net:2064:7)
+    at startServer (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:46:14)
+2025-07-16T10:21:02.903Z [error]: Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1905:16)
+    at listenInCluster (node:net:1962:12)
+    at Server.listen (node:net:2064:7)
+    at startServer (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:46:14)
+2025-07-16T10:22:20.951Z [error]: Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1905:16)
+    at listenInCluster (node:net:1962:12)
+    at Server.listen (node:net:2064:7)
+    at startServer (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:46:14)
+2025-07-16T10:31:34.017Z [error]: Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1905:16)
+    at listenInCluster (node:net:1962:12)
+    at Server.listen (node:net:2064:7)
+    at /Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:46:14
+    at Generator.next (<anonymous>)
+    at /Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:4:12)
+    at startServer (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:44:32)
+2025-07-16T10:32:26.441Z [error]: Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1905:16)
+    at listenInCluster (node:net:1962:12)
+    at Server.listen (node:net:2064:7)
+    at /Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:46:14
+    at Generator.next (<anonymous>)
+    at /Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:4:12)
+    at startServer (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:44:32)
+2025-07-17T09:21:28.996Z [error]: Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1905:16)
+    at listenInCluster (node:net:1962:12)
+    at Server.listen (node:net:2064:7)
+    at /Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:46:14
+    at Generator.next (<anonymous>)
+    at /Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:4:12)
+    at startServer (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:44:32)
+2025-07-17T09:23:10.833Z [error]: Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1905:16)
+    at listenInCluster (node:net:1962:12)
+    at Server.listen (node:net:2064:7)
+    at /Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:46:14
+    at Generator.next (<anonymous>)
+    at /Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:4:12)
+    at startServer (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:44:32)
+2025-07-17T09:25:22.471Z [error]: Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1905:16)
+    at listenInCluster (node:net:1962:12)
+    at Server.listen (node:net:2064:7)
+    at /Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:46:14
+    at Generator.next (<anonymous>)
+    at /Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:4:12)
+    at startServer (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:44:32)
+2025-07-17T09:26:17.087Z [error]: Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1905:16)
+    at listenInCluster (node:net:1962:12)
+    at Server.listen (node:net:2064:7)
+    at /Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:46:14
+    at Generator.next (<anonymous>)
+    at /Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:4:12)
+    at startServer (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:44:32)
+2025-07-17T09:29:07.892Z [error]: Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1905:16)
+    at listenInCluster (node:net:1962:12)
+    at Server.listen (node:net:2064:7)
+    at /Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:44:14
+    at Generator.next (<anonymous>)
+    at /Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:4:12)
+    at startServer (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:42:32)
+2025-07-17T09:53:44.579Z [error]: Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1905:16)
+    at listenInCluster (node:net:1962:12)
+    at Server.listen (node:net:2064:7)
+    at /Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:55:14
+    at Generator.next (<anonymous>)
+    at /Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:4:12)
+    at startServer (/Users/oluwatobiayoolajolaosho/Documents/echoverse_backend/src/APP/index.ts:53:32)

@@ -6,7 +6,8 @@
   "_moduleAliases": {
     "@": "src/",
     "@cores": "src/CORE",
-    "@error": "src/CORE/utils/errors"
+    "@error": "src/CORE/utils/errors",
+    "@Logger": "src/CORE/logger/index.ts"
   },
   "scripts": {
     "knex": "knex",
