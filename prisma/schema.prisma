@@ -27,3 +27,37 @@ model User {
 
   @@map("users")
 }
+
+
+model ChatSession {
+  id String @id @default(uuid())
+  createdAt DateTime @default(now())
+  participants Participant[]
+  messages Message[]
+}
+
+model Participant{
+  id String @id @default(uuid())
+  session ChatSession @relation(fields: [sessionId], references: [id])
+  sessionId String
+  userId String?
+  externalId String?
+  role ParticipantRole
+}
+
+
+model Message {
+  id String @id @default(uuid())
+  session ChatSession @relation(fields: [sessionId], references: [id])
+  sessionId String
+  senderId String
+  content String
+  sentAt DateTime @default(now())
+}
+
+
+enum ParticipantRole {
+  USER
+  AGENT
+  PLATFORM_USER
+}
